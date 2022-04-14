@@ -2,7 +2,7 @@ name: testing FUNCTIONS
 on: push
 
 jobs:
-  dump_FUNCTION:
+  dump_function:
     runs-on: ubuntu-latest
     steps:
       - name: dump FUNCTIONS
