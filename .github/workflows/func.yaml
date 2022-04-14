@@ -2,10 +2,12 @@ name: testing FUNCTIONS
 on: push
 
 jobs:
-  dump-function:
+  dump_FUNCTION:
     runs-on: ubuntu-latest
     steps:
       - name: dump FUNCTIONS
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+        run: 
+          echo ${{ contains('hello', 'll') }}
+          echo ${{ startswith('hello', 'he') }}
+          echo ${{ endswith('hello', 'll') }}
+          echo ${{ format('hello {0} {1} {2}', 'world', '!', '!') }}
