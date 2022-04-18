@@ -9,7 +9,7 @@ jobs:
       - name: node version 
         run: node -v 
       - uses: actions/setup-node@v3
-          with:
+        with:
             node-version: '14'
       - name: node version again
         run: node -v
