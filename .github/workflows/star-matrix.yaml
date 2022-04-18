@@ -4,9 +4,10 @@ on: [push]
 
 jobs:
   node-versions:
-    strategy:
-      os: [macos-latest, ubuntu-latest, windows-latest]
-      node_version: [ 6, 8, 10]
+    matrix:
+      strategy:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node_version: [ 6, 8, 10]
     runs-on: ${{ strategy.os }}
     steps:
       - name: node version 
