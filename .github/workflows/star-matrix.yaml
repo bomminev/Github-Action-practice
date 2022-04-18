@@ -4,8 +4,8 @@ on: [push]
 
 jobs:
   node-versions:
-    matrix:
-      strategy:
+    strategy:
+      matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         node_version: [ 6, 8, 10]
     runs-on: ${{ strategy.os }}
