@@ -4,12 +4,15 @@ on: [push]
 
 jobs:
   node-versions:
-    runs-on: ubuntu-latest
+    strategy:
+      os: [macos-latest, ubuntu-latest, windows-latest]
+      node_version: [ 6, 8, 10]
+    runs-on: ${{ strategy.os }}
     steps:
       - name: node version 
         run: node -v 
       - uses: actions/setup-node@v3
         with:
-            node-version: '14'
+            node-version: ${{ strategy.node_version }}
       - name: node version again
         run: node -v
