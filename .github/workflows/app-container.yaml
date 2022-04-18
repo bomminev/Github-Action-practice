@@ -1,0 +1,21 @@
+name: new-app
+on: [push]
+jobs:
+  node-docker:
+    runs-on: ubuntu-latest
+    service:
+      app:
+        image: alialaa17/node-api
+        ports:
+          - 3001:3000
+      mango:
+        image: mango
+        ports:
+          - "27017:27017"
+    steps:
+      - name: post a user
+        run: 'curl -X POST https://localhost:3001/api/user 
+          -H ''content-Type: application/json'' -d ''
+           {\"username\": \"hello\", \"address\" \"dwded\"}'' '
+      - name: Get users
+        run: curl https://localhost:3001/api/users
