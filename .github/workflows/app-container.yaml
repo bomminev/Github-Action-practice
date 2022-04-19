@@ -9,11 +9,11 @@ jobs:
         ports:
           - 3001:3000
       mango:
-        image: mongo
+        image: mango
         ports:
           - "27017:27017"
     steps:
-      - name: post a user
+      - name: Post a user
         run: 'curl -X POST http://localhost:3001/api/user -H ''Content-Type: application/json'' -d ''{"username": "hello","address": "dwded"}'''
-      - name: Get users
-        run: curl https://localhost:3001/api/users
+      - name: Get Users
+        run: curl http://localhost:3001/api/users
