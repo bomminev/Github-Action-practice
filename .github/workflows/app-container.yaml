@@ -4,7 +4,7 @@ jobs:
   steps-docker:
     runs-on: ubuntu-latest
     container:
-      image: node:erbium-alpine3.15
+      image: node:12-alpine3.14
     steps:
       - name: node version
         run: node -v 
