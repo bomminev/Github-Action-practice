@@ -4,20 +4,26 @@ jobs:
   steps-docker:
     runs-on: ubuntu-latest
     container:
-      image: node:17-alpine3.14
+      image: node:erbium-alpine3.15
     steps:
       - name: node version
         run: node -v 
       - name: step with docker 
         uses: docker://node:14-alpine3.15
         with:
-          entrypoint: "/bin/echo"
+          enterypoint: "/bin/echo"
           args: "hello world" 
       - name: node node-versions
         uses: docker://node:14-alpine3.15
         with:
-          entrypoint: /usr/local/bin/node
+          enterpoint: /usr/local/bin/node
           args: -v
+      - uses: actions/checkout@v1
+      - name: Run a script
+        uses: docker://node:14-alpine3.15
+        with:
+          entrypoint: ./script.sh
+          args: "some string"
   node-docker:
     runs-on: ubuntu-latest
     services:
@@ -34,3 +40,4 @@ jobs:
         run: 'curl -X POST http://localhost:3001/api/user -H ''Content-Type: application/json'' -d ''{"username": "hello","address": "dwded"}'''
       - name: Get Users
         run: curl http://localhost:3001/api/users
+      
