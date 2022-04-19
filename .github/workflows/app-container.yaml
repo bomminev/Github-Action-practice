@@ -11,12 +11,12 @@ jobs:
       - name: step with docker 
         uses: docker://node:14-alpine3.15
         with:
-          enterypoint: "/bin/echo"
+          entrypoint: "/bin/echo"
           args: "hello world" 
       - name: node node-versions
         uses: docker://node:14-alpine3.15
         with:
-          enterpoint: /usr/local/bin/node
+          entrypoint: /usr/local/bin/node
           args: -v
       - uses: actions/checkout@v1
       - name: Run a script
