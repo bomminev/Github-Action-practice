@@ -1,6 +1,23 @@
 name: new-app
 on: [push]
 jobs:
+  steps-docker:
+    runs-on: ubuntu-latest
+    container:
+      image: node:erbium-alpine3.15
+    steps:
+      - name: node version
+        run: node -v 
+      - name: step with docker 
+        uses: docker://node:14-alpine3.15
+        with:
+          enterypoint: "/bin/echo"
+          args: "hello world" 
+      - name: node node-versions
+        uses: docker://node:14-alpine3.15
+        with:
+          enterpoint: /usr/local/bin/node
+          args: -v
   node-docker:
     runs-on: ubuntu-latest
     services:
