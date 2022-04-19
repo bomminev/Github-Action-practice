@@ -4,19 +4,19 @@ jobs:
   steps-docker:
     runs-on: ubuntu-latest
     container:
-      image: node:erbium-alpine3.15
+      image: node:17-alpine3.14
     steps:
       - name: node version
         run: node -v 
       - name: step with docker 
         uses: docker://node:14-alpine3.15
         with:
-          enterypoint: "/bin/echo"
+          entrypoint: "/bin/echo"
           args: "hello world" 
       - name: node node-versions
         uses: docker://node:14-alpine3.15
         with:
-          enterpoint: /usr/local/bin/node
+          entrypoint: /usr/local/bin/node
           args: -v
   node-docker:
     runs-on: ubuntu-latest
