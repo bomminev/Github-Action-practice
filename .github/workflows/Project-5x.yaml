@@ -26,15 +26,15 @@ on:
       OCULUS_CASSANDRA_PORT:
         description: 'Port that Cassandra native transport is running on for the specified cluster.'
         required: true
-        default: 9042
+        default: "9042"
       OCULUS_CASSANDRA_REPLICATION:
         description: 'The replication factor to use for the keyspaces created'
         required: true
-        default: 3
+        default: "3"
       NIMBLE_DEFAULT_LAGOM_CASSANDRA_REPLICATION:
         description: 'replication factor for nimble lagom cassandra'
         required: true
-        default: 3
+        default: "3"
         
 jobs:
   build:
