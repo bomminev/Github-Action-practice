@@ -4,34 +4,34 @@ on:
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-       OCULUS_ENVIRONMENT:
+      OCULUS_ENVIRONMENT:
         description: 'Environment to create tables for - used as the suffix for keyspaces created.'
         required: true
         default: 'asup_payload'
-       BRANCH_NAME:
+      BRANCH_NAME:
         description: 'Branch Name'
         required: true
         default: 'develop'
-       APP_ID:
+      APP_ID:
         required: true
         default: 'nimble_volstats_lagom'
-       NIMBLE_KEYSPACE:
+      NIMBLE_KEYSPACE:
         description: 'environment'
         required: true
         default: 'lvs_default'
-       CASSANDRA_CONTACT_POINT:
+      CASSANDRA_CONTACT_POINT:
         description: 'Single node in the Cassandra cluster where the keyspaces/tables should be created'
         required: true
         default: '10.180.40.154'
-       OCULUS_CASSANDRA_PORT:
+      OCULUS_CASSANDRA_PORT:
         description: 'Port that Cassandra native transport is running on for the specified cluster.'
         required: true
         default: 9042
-       OCULUS_CASSANDRA_REPLICATION:
+      OCULUS_CASSANDRA_REPLICATION:
         description: 'The replication factor to use for the keyspaces created'
         required: true
         default: 3
-       NIMBLE_DEFAULT_LAGOM_CASSANDRA_REPLICATION:
+      NIMBLE_DEFAULT_LAGOM_CASSANDRA_REPLICATION:
         description: 'replication factor for nimble lagom cassandra'
         required: true
         default: 3
