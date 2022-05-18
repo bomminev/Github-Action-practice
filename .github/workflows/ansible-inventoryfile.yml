@@ -16,8 +16,7 @@ on:
         - qa
         - support
         - portal
-      Inventory:
-        description: 'enter host list with comma saparate.. ex: 10.175.4.100,'
+      Inventory/:
         required: True
         type: file
       branch:
