@@ -1,0 +1,45 @@
+name: Ansible-user-with-inventory-file
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      USER_GROUP:
+        type: choice
+        required: True
+        description: User groups
+        options: 
+        - devops
+        - sre
+        - harmony
+        - tenable
+        - internal
+        - qa
+        - support
+        - portal
+      Inventory:
+        description: Iventory file
+        required: True
+        type: file
+      branch:
+        required: True
+        default: master
+        type: string
+
+jobs:
+  build:
+    runs-on:  [ self-hosted, sre-jenkins ]
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: Read Iventory file
+      id: getinventory
+      run: echo "::set-output name=version::$(cat github.event.inputs.iventory)"
+    - name: add user account in target nodes
+      run: |
+        >Inventory
+        for HOSTS in ${{ github.event.inputs.Inventory }}; do
+        echo $HOSTS >> Inventory
+        done
+        ansible-playbook -i Inventory useradd.yml --tags "${{ github.event.inputs.USER_GROUP }}" -l all
+        a
