@@ -1,6 +1,15 @@
 name: containers
 
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      USER_GROUP:
+        type: choice
+        required: True
+        description: User groups
+        options: 
+        - devops
+        - sre
 
 jobs:
   node-version:
