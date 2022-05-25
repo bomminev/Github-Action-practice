@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on:  [ self-hosted, sre-jenkins ]
+    runs-on: ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v3
