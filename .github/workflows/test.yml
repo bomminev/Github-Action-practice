@@ -16,5 +16,4 @@ jobs:
     - name: Read Iventory file
       run: |
               ls -l
-              cd test
-              cat test/script.sh
+              cat script.sh
