@@ -14,4 +14,6 @@ jobs:
     - name: checkout
       uses: actions/checkout@v3
     - name: Read Iventory file
-      run: cat test/script.sh
+      run: |
+              ls -l
+              cat test/script.sh
