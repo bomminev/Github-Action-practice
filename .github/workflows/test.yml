@@ -2,11 +2,12 @@ name: tests
 
 on:
   workflow_dispatch:
-    branch:
+    inputs:
+      branch:
         required: True
         default: main
         type: string
-    Inventory:
+      Inventory:
         required: True
         type: string
 
