@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Read package.json
       id: package
-      uses: juliangruber/read-file-action@v1
+      uses: actions/read-file-action@v1
       with:
         path: test/${{ github.event.inputs.Inventory }}
     - name: Echo package.json
