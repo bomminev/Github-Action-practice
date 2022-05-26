@@ -6,6 +6,9 @@ on:
         required: True
         default: main
         type: string
+    Inventory:
+        required: True
+        type: string
 
 jobs:
   build:
@@ -17,6 +20,6 @@ jobs:
       id: package
       uses: juliangruber/read-file-action@v1
       with:
-        path: test/scripts.sh
+        path: test/${{ github.event.inputs.Inventory }}
     - name: Echo package.json
       run: echo "${{ steps.package.outputs.content }}"
