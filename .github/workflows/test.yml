@@ -24,8 +24,4 @@ jobs:
         path: test/${{ github.event.inputs.Inventory }}
     - name: Echo package.json
       run: echo "${{ steps.package.outputs.content }}"
-    - name: add user account in target nodes
-      run: |
-        for HOSTS in echo "${{ steps.file.outputs.content }}"; do
-        echo $HOSTS
         
